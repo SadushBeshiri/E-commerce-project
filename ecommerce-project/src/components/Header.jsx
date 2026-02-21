@@ -2,17 +2,19 @@ import { Link } from 'react-router'
 import './header.css'
 
 export function Header({ cart }){
-    let totalQuantity =0;
+    // Use optional chaining and check if cart.cart or just cart is the array
+    const cartArray = Array.isArray(cart) ? cart : cart?.cart || [];
     
-    cart.cart.forEach(cartItem => {
-        totalQuantity+= cartItem.quantity;
+    let totalQuantity = 0;
+    cartArray.forEach(cartItem => {
+        totalQuantity += cartItem.quantity;
     });
     
 
     return (
         <div className="header">
             <div className="left-section">
-            <Link to="" className="header-link">
+            <Link to="/" className="header-link">
                 <img className="logo"
                 src="images/logo-white.png" />
                 <img className="mobile-logo"
