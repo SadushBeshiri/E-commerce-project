@@ -47,7 +47,7 @@ return (
                         </div>
 
                         <div className="product-price">
-                            {formatMoney(product)}
+                            {formatMoney(product.priceCents)}
                         </div>
 
                         <div className="product-quantity-container">
